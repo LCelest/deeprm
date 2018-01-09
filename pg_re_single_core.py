@@ -37,14 +37,15 @@ def get_traj(agent, env, episode_max_length, render=False):
     Return dictionary of results
     """
     env.reset()
-    obs = []
-    acts = []
+    obs = []    # store observations
+    acts = []   # store acts
     rews = []
     entropy = []
     info = []
 
     ob = env.observe()
 
+    # perform action with episode_max_length as the maximum times
     for _ in xrange(episode_max_length):
         act_prob = agent.get_one_act_prob(ob)
         csprob_n = np.cumsum(act_prob)
@@ -157,13 +158,14 @@ def plot_lr_curve(output_file_prefix, max_rew_lr_curve, mean_rew_lr_curve, slow_
 
     plt.savefig(output_file_prefix + "_lr_curve" + ".pdf")
 
-
+# end: termination type, 'no_new_job' or 'all_done'
 def launch(pa, pg_resume=None, render=False, repre='image', end='no_new_job'):
 
     env = environment.Env(pa, render=render, repre=repre, end=end)
 
     pg_learner = pg_network.PGLearner(pa)
 
+    # if has file for pg network
     if pg_resume is not None:
         net_handle = open(pg_resume, 'rb')
         net_params = cPickle.load(net_handle)
@@ -197,11 +199,11 @@ def launch(pa, pg_resume=None, render=False, repre='image', end='no_new_job'):
             # Collect trajectories until we get timesteps_per_batch total timesteps
             trajs = []
 
-            for i in xrange(pa.num_seq_per_batch):
+            for i in xrange(pa.num_seq_per_batch): # num_seq_per_batch: number of sequences to compute baseline
                 traj = get_traj(pg_learner, env, pa.episode_max_length)
                 trajs.append(traj)
 
-            # roll to next example
+            # roll to next example (sequence)
             env.seq_no = (env.seq_no + 1) % env.pa.num_ex
 
             all_ob.append(concatenate_all_ob(trajs, pa))

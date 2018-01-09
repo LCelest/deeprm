@@ -1,0 +1,156 @@
+net@net-b8:~/luo_deeprm$ python pg_re_single_core.py
+Load on # 0 resource dimension is 0.5444
+Load on # 1 resource dimension is 0.6036
+network_input_height= 20
+network_input_width= 224
+network_output_dim= 11
+ params= [W, b, W, b]  count= 89851
+WARNING (theano.tensor.blas): We did not find a dynamic library in the library_dir of the library we use for blas. If you use ATLAS, make sure to compile it with dynamics library.
+WARNING (theano.tensor.blas): We did not find a dynamic library in the library_dir of the library we use for blas. If you use ATLAS, make sure to compile it with dynamics library.
+lr_rate= 0.001
+Preparing for data...
+Load on # 0 resource dimension is 0.5444
+Load on # 1 resource dimension is 0.6036
+
+
+
+=============== 0 ===============
+---------- Tetris -----------
+total discount reward :          -415.3050949050949
+---------- SJF -----------
+total discount reward :          -217.53151848151836
+---------- Random -----------
+total discount reward :          -632.9596903096905
+
+
+
+=============== 1 ===============
+---------- Tetris -----------
+total discount reward :          -313.0070429570427
+---------- SJF -----------
+total discount reward :          -174.56650016650036
+---------- Random -----------
+total discount reward :          -580.6925241425246
+
+
+
+=============== 2 ===============
+---------- Tetris -----------
+total discount reward :          -550.7501165501161
+---------- SJF -----------
+total discount reward :          -260.5162337662338
+---------- Random -----------
+total discount reward :          -612.7005661005661
+
+
+
+=============== 3 ===============
+---------- Tetris -----------
+total discount reward :          -234.50549450549457
+---------- SJF -----------
+total discount reward :          -219.96153846153857
+---------- Random -----------
+total discount reward :          -448.0673992673996
+
+
+
+=============== 4 ===============
+---------- Tetris -----------
+total discount reward :          -298.7398268398269
+---------- SJF -----------
+total discount reward :          -194.25346320346327
+---------- Random -----------
+total discount reward :          -587.2749750249756
+
+
+
+=============== 5 ===============
+---------- Tetris -----------
+total discount reward :          -110.07575757575758
+---------- SJF -----------
+total discount reward :          -99.69696969696969
+---------- Random -----------
+total discount reward :          -325.3117715617714
+
+
+
+=============== 6 ===============
+---------- Tetris -----------
+total discount reward :          -268.9504329004329
+---------- SJF -----------
+total discount reward :          -174.7322510822511
+---------- Random -----------
+total discount reward :          -512.9022311022311
+
+
+
+=============== 7 ===============
+---------- Tetris -----------
+total discount reward :          -710.9492174492167
+---------- SJF -----------
+total discount reward :          -288.93882783882754
+---------- Random -----------
+total discount reward :          -537.7806193806192
+
+
+
+=============== 8 ===============
+---------- Tetris -----------
+total discount reward :          -142.2326007326007
+---------- SJF -----------
+total discount reward :          -127.55219780219775
+---------- Random -----------
+total discount reward :          -380.3516483516485
+
+
+
+=============== 9 ===============
+---------- Tetris -----------
+total discount reward :          -397.4333000333005
+---------- SJF -----------
+total discount reward :          -275.51133866133824
+---------- Random -----------
+total discount reward :          -580.9206959706955
+-----------------
+Iteration:       0
+NumTrajs:        200
+NumTimesteps:    59898
+Loss:            0.08744761483186987
+MaxRew:          -428.2237762237761
+MeanRew:         -507.747502747253 +- 94.31846297464965
+MeanSlowdown:    7.820541401273886
+MeanLen:         299.49 +- 22.858475452225594
+MeanEntropy      2.39787721909432
+Elapsed time     36.5537028313 seconds
+-----------------
+Load on # 0 resource dimension is 0.5444
+Load on # 1 resource dimension is 0.6036
+
+
+
+=============== 0 ===============
+network_input_height= 20
+network_input_width= 224
+network_output_dim= 11
+ params= [W, b, W, b]  count= 89851
+lr_rate= 0.001
+---------- PG -----------
+total discount reward :          -625.9105894105895
+---------- Tetris -----------
+total discount reward :          -415.3050949050949
+---------- SJF -----------
+total discount reward :          -217.53151848151836
+---------- Random -----------
+total discount reward :          -545.2153346653341
+
+
+
+=============== 1 ===============
+network_input_height= 20
+network_input_width= 224
+network_output_dim= 11
+ params= [W, b, W, b]  count= 89851
+lr_rate= 0.001
+^Z
+[1]+  Stopped                 python pg_re_single_core.py
+net@net-b8:~/luo_deeprm$
